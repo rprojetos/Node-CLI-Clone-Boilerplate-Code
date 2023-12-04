@@ -111,6 +111,27 @@ Ele foi desenvolvido para ser fácil de configurar e usar, fornecendo uma ampla 
   npx ts-jest config:init
 ```
 
+
+
+<h2>
+  Executando como comando global >> initdev
+</h2>
+<p>
+A definição do comando é feita com a adição da chave "bin" no arquivo package.json, conforme exemplificado a seguir:
+"bin": {
+    "initdev":"./dist/index.js"
+  },
+Após a geração do processo de buid, deverá ser realizado uma instalação global da aplicação, e já teremos o funcionamento do comando disponivel no para teste como comando global.
+</p>
+<p>
+Comando para realizar a instalação:
+>> npm i -g
+</p>
+<p>
+Em sistemas linux, pode ser necessário um comando de superusuário:
+>> sudo npm i -g
+</p>
+
 ---
 
 Por ♥ Ricardo Poleto 👋 [Linkedin!](https://www.linkedin.com/in/ricardo-poleto/)

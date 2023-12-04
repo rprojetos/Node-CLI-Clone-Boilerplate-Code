@@ -1,23 +1,18 @@
+import path from 'path';
 import fs from 'node:fs';
-import path from 'node:path';
-import shelljs from 'shelljs';
-
-// Interface
-import { EChoicesBoilerPlate } from 'enum/choices-boilerplate.enum';
-
-// Enum
-import { EGitName } from 'enum/git-name.enum';
-import { IAnswers } from 'interface/answers.interface';
+import shellJs from 'shelljs';
+import { EChoicesBoilerplate } from '../enum/choices-boilerplate.enum';
+import { IAnswers } from '../interface/answers.interface';
+import { EGitName } from '../enum/git-name-enum';
 
 class GenerateController {
   public gen(answers: IAnswers) {
     try {
       switch (answers.tech) {
-        case EChoicesBoilerPlate.NODEJS_TS:
+        case EChoicesBoilerplate.NODEJS_TS:
           this._execPath(EGitName.NODEJS_TS, answers.folderName);
           break;
-
-        case EChoicesBoilerPlate.SCSS:
+        case EChoicesBoilerplate.SCSS:
           this._execPath(EGitName.SCSS, answers.folderName);
           break;
       }
@@ -28,16 +23,14 @@ class GenerateController {
 
   private _execPath(gitName: string, folderName: string) {
     try {
-      shelljs.cd(path.resolve());
-      shelljs.exec(`git clone git@github.com:troquatte/${gitName}.git`);
-
+      shellJs.cd(path.resolve());
+      shellJs.exec(`git clone git@github.com:rprojetos/${gitName}`);
       fs.renameSync(
         `${path.join(path.resolve(), gitName)}`,
-        `${path.join(path.resolve(), folderName)}`,
-      );
-
+        `${path.join(path.resolve(), folderName)}`
+        );
       console.log('Arquivo criado com Sucesso!');
-      return shelljs.exit();
+      shellJs.exit();
     } catch (error) {
       console.log(error);
     }
