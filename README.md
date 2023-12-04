@@ -1,8 +1,13 @@
 <h1>
-  Boilerplate Typescript / NodeJs
+  CLI Clone Repo GitHub RProjetos
 </h1>
-<p>Desenvolvido para prover agilidade no desenvolvimento de código Typescript / NodeJs.</p>
-<p>Os passos de uso são clonar o projeto e instalar as dependências:</p>
+<p>Essa CLI clona projetos do git hub, no formato de boilertemplate, para que possa prover agilidade no desenvolvimento de código Typescript / NodeJs.</p>
+<p>Os passos de uso são clonar o projeto utilizando a cli e instalar as dependências:</p>
+<p>
+<i>
+Obs: No final desse documento é explicado como usar a cli de modo global.
+</i>
+</p>
 
 ```javascript
   // Install
@@ -114,7 +119,7 @@ Ele foi desenvolvido para ser fácil de configurar e usar, fornecendo uma ampla 
 
 
 <h2>
-  Executando como comando global >> initdev
+  Executando CLI com comando global >> initdev
 </h2>
 <p>
 A definição do comando é feita com a adição da chave "bin" no arquivo package.json, conforme exemplificado a seguir:
